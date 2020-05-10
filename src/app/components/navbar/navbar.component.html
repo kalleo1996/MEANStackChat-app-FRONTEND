@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Mean Auth app</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" >
+        <li *ngIf="!auth.loggedIn()" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="home">Home</a>
+        </li>
+        <li  *ngIf="!auth.loggedIn()" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="register">Register</a>
+        </li>
+        <li   *ngIf="!auth.loggedIn()" class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="login">Login</a>
+          </li>
+          <li  *ngIf="auth.loggedIn()" class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="profile">Profile</a>
+          </li>
+          <li *ngIf="auth.loggedIn()"  class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="dashboard">Dashboard</a>
+          </li>
+        
+      </ul>
+    
+    </div> 
+        <ul>
+         
+          <li *ngIf="auth.loggedIn()" class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="register" (click)="onLogoutClick()">Logout</a>
+          </li>
+          </ul>
+      
+      
+  </nav>
